@@ -2,3 +2,5 @@
 replit.nix
 .cache
 .config
+go.mod
+go.sum

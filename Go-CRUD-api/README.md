@@ -1,0 +1,1 @@
+This is a CRUD api which accepts http requests from client to get all, add, update and delete movies
