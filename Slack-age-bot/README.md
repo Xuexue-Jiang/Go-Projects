@@ -1,4 +1,4 @@
-This is a Slack bot that can calculate your age. 
+This is a Slack bot named age-bot that can calculate your age. 
 
 Setting up Env variables are optional. 
 
