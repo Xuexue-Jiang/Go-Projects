@@ -6,12 +6,13 @@ import (
 	"log"
 	"os"
 	"strconv"
+
 	"github.com/shomali11/slacker"
 )
 
-func printCommandEvents(analyticsChannel <-chan *slacker.CommandEvent){
+func printCommandEvents(analyticsChannel <-chan *slacker.CommandEvent) {
 
-	for event := range analyticsChannel{
+	for event := range analyticsChannel {
 		fmt.Println("Command Events")
 		fmt.Println(event.Timestamp)
 		fmt.Println(event.Command)
@@ -22,9 +23,9 @@ func printCommandEvents(analyticsChannel <-chan *slacker.CommandEvent){
 
 }
 
-func main(){
-	os.Setenv("SLACK_BOT_TOKEN", "xoxb-3884288083333-00000-2b3FZLxuhynkiunbb6CJbJfW")
-	os.Setenv("SLACK_APP_TOKEN", "xapp-1-A03RKPTTTT-0000-9625e676f6222222225ad15ce25fe2d9a2208389b3bbbbbbbbbbbb")
+func main() {
+	os.Setenv("SLACK_BOT_TOKEN", "xoxb-YOUR SLACK BOT TOKEN")
+	os.Setenv("SLACK_APP_TOKEN", "xapp-YOUR SLACK APP TOKEN")
 
 	bot := slacker.NewClient(os.Getenv("SLACK_BOT_TOKEN"), os.Getenv("SLACK_APP_TOKEN"))
 
@@ -43,7 +44,7 @@ func main(){
 			ageToPrint := fmt.Sprintf("Your age is %d", age)
 			response.Reply(ageToPrint)
 		},
-		
+
 		HideHelp: false,
 	})
 
@@ -58,4 +59,3 @@ func main(){
 		log.Fatal(err)
 	}
 }
-
